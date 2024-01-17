@@ -17,7 +17,7 @@ class Service:
         return result
 
     def get_summery_bart(self, text: str):
-        return self.t5_small.get_summary(text)
+        return self.bert.get_summary(text)
 
     def get_summery_destilbert(self, text: str):
         return self.destilbert.get_summary(text)
