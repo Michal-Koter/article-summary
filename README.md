@@ -1,7 +1,5 @@
 # Streszczanie anglojęzycznych artykułów
 
-Licencja: apache-2.0
-
 Aplikacja pozwala na otrzymanie streszczenia artykułu w języku angielski.
 Używając interfejsu webowego, otrzymuje się od razu trzy streszczenia z różnych modeli.
 
