@@ -27,14 +27,14 @@ class Item(BaseModel):
 
 @app.post("/summarize/bert")
 async def summarize(item: Item):
-    return service.get_summery_bart(item.text)
+    return service.get_summary_bart(item.text)
 
 
 @app.post("/summarize/destilbert")
 async def summarize(item: Item):
-    return service.get_summery_destilbert(item.text)
+    return service.get_summary_destilbart(item.text)
 
 
 @app.post("/summarize/t5")
 async def summarize(item: Item):
-    return service.get_summery_t5_small(item.text)
+    return service.get_summary_t5_small(item.text)
