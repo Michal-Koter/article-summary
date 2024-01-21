@@ -31,11 +31,9 @@ Aby wejść na stronę domową użyj: `http://localhost:8000/static/index.html`
 
 Wszystkie modele pochodzą z HuggingFace
 
-### [sshleifer/distilbart-cnn-12-6](https://huggingface.co/sshleifer/distilbart-cnn-12-6) (distilbart)
-
-### [Falconsai/text_summarization](https://huggingface.co/Falconsai/text_summarization) (t5_small)
-
-### [slauw87/bart_summarisation](https://huggingface.co/slauw87/bart_summarisation) (bart)
+* [sshleifer/distilbart-cnn-12-6](https://huggingface.co/sshleifer/distilbart-cnn-12-6) (distilbart)
+* [Falconsai/text_summarization](https://huggingface.co/Falconsai/text_summarization) (t5_small)
+* [slauw87/bart_summarisation](https://huggingface.co/slauw87/bart_summarisation) (bart)
 
 
 ## Ewaluacja
