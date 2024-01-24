@@ -24,7 +24,7 @@ if __name__ == '__main__':
     summary_path = "data/summaries"
 
     service = Service()
-    ref, bart_sum, destilbart_sum, t5_sum = [], [], [], []
+    ref, bart_sum, distilbart_sum, t5_sum = [], [], [], []
 
     for file_name in listdir(article_path):
         print(file_name)
@@ -49,10 +49,10 @@ if __name__ == '__main__':
             bart_summary = 'none'
 
         try:
-            destilbart_summary = service.get_summary_destilbart(article)
+            distilbart_summary = service.get_summary_distilbart(article)
         except Exception as e:
-            print("Destilbart:", e)
-            destilbart_summary = 'none'
+            print("Distilbart:", e)
+            distilbart_summary = 'none'
 
         try:
             t5_summary = service.get_summary_t5_small(article)
@@ -61,12 +61,12 @@ if __name__ == '__main__':
             t5_summary = 'none'
 
         bart_sum.append(bart_summary)
-        destilbart_sum.append(destilbart_summary)
+        distilbart_sum.append(distilbart_summary)
         t5_sum.append(t5_summary)
 
     # calculate bart_score
     _, _, f1_bart = get_bert_scores(ref, bart_sum)
-    _, _, f1_destilbart = get_bert_scores(ref, destilbart_sum)
+    _, _, f1_distilbart = get_bert_scores(ref, distilbart_sum)
     _, _, f1_t5 = get_bert_scores(ref, t5_sum)
 
     bart_scores_out = []
@@ -74,7 +74,7 @@ if __name__ == '__main__':
     row = {
         "Metric": "F1",
         "Summary bart": np.average(f1_bart.tolist()),
-        "Summary destilbart": np.average(f1_destilbart.tolist()),
+        "Summary distilbart": np.average(f1_distilbart.tolist()),
         "Summery T5": np.average(f1_t5.tolist())
     }
     bart_scores_out.append(row)
@@ -83,19 +83,19 @@ if __name__ == '__main__':
 
     # calculate ROUGE
     eval_bart_rouge = get_rouge_scores(bart_sum, ref)
-    eval_destilbart_rouge = get_rouge_scores(destilbart_sum, ref)
+    eval_distilbart_rouge = get_rouge_scores(distilbart_sum, ref)
     eval_t5_rouge = get_rouge_scores(t5_sum, ref)
 
     rouge_scores_out = []
     for metric in ["rouge-1", "rouge-2", "rouge-l"]:
         for label in ["F-Score"]:
             eval_bart_score = eval_bart_rouge[0][metric][label[0].lower()]
-            eval_destilbart_score = eval_destilbart_rouge[0][metric][label[0].lower()]
+            eval_distilbart_score = eval_distilbart_rouge[0][metric][label[0].lower()]
             eval_t5_score = eval_t5_rouge[0][metric][label[0].lower()]
             row = {
                 "Metric": f"{metric} ({label})",
                 "Summary bart": eval_bart_score,
-                "Summary destilbart": eval_destilbart_score,
+                "Summary distilbart": eval_distilbart_score,
                 "Summery T5": eval_t5_score
             }
             rouge_scores_out.append(row)

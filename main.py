@@ -32,7 +32,7 @@ async def summarize(item: Item):
 
 @app.post("/summarize/destilbert")
 async def summarize(item: Item):
-    return service.get_summary_destilbart(item.text)
+    return service.get_summary_distilbart(item.text)
 
 
 @app.post("/summarize/t5")

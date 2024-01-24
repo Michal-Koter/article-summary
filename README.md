@@ -62,5 +62,6 @@ ROUGE mierzy pokrywające się słowa w tekstach.
 * Bazując jedynie na BERTScore użyłbym modelu opartego o Bart (slauw87/bart_summarisation).
 * Bazując jedynie na ROUGE, użyłbym modelu opartego o T5-small (Falconsai/text_summarization)
 * Biorąc pod uwagę obie metryki, do tworzenia streszczeń wykorzystałbym modelu opartego o T5-small (Falconsai/text_summarization),
-  ponieważ ma najlepszy wynik w ROUGE oraz ma drugi najlepszy wynik w BERTScore. 
+  ponieważ ma najlepszy wynik w ROUGE oraz ma drugi najlepszy wynik w BERTScore,
+  chociaż nie radzi sobie z tekstami powyżej 1024 tokenów. 
 
