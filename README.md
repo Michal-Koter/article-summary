@@ -48,8 +48,6 @@ BERTScore liczy podobieństwo semantyczne tekstów.<br>
 
 ![wyniki BERTScore](fig/bertsocre.png)
 
-*powinno być 'distilbart' zamiast 'destilbart'
-
 ### ROUGE
 
 ROUGE mierzy pokrywające się słowa w tekstach.
@@ -58,8 +56,6 @@ ROUGE mierzy pokrywające się słowa w tekstach.
 - rouge-l - dopasowanie w najdłuższych wspólnych podciągach
 
 ![wyniki ROUGE](fig/rouge.png)
-
-*powinno być 'distilbart' zamiast 'destilbart'
 
 ### Wnioski:
 
