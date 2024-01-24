@@ -46,7 +46,7 @@ Ewaluacja przeprowadzona na 50 artykułach pochodzących ze zbioru [BBC News Sum
 BERTScore liczy podobieństwo semantyczne tekstów.<br>
 - F1 - pozwala porównać przechwycenie kluczowych informacji.
 
-![wyniki BERTScore](fig/bertsocre.png)
+![wyniki BERTScore](fig/bertscore.png)
 
 ### ROUGE
 
